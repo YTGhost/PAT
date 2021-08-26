@@ -21,3 +21,29 @@ int main()
     }
     return 0;
 }
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b;
+    cin >> a >> b;
+    int c = a + b;
+    int cnt = 0;
+    int flag = c >= 0 ? 0 : 1;
+    string res;
+    if(c == 0) res = "0";
+    while(c) {
+        if(cnt == 3) {
+            res = "," + res;
+            cnt = 0;
+        }
+        res = to_string(abs(c % 10)) + res;
+        c /= 10;
+        cnt++;
+    }
+    if(flag) res = "-" + res;
+    cout << res << endl;
+    return 0;
+}
