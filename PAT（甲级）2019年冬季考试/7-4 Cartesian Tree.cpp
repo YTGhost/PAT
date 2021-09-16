@@ -37,8 +37,8 @@ void bfs(int root)
         int item = q.front();
         q.pop();
         res.push_back(item);
-        if(lm[item]) q.push(lm[item]);
-        if(rm[item]) q.push(rm[item]);
+        if(lm.count(item)) q.push(lm[item]);
+        if(rm.count(item)) q.push(rm[item]);
     }
 }
 

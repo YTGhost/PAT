@@ -36,6 +36,7 @@ int main()
     getline(cin, str);
     string word;
     for(int i = 0; i < str.length(); i++) {
+        if(str[i] < 'A' || str[i] > 'Z') continue;
         while(str[i] >= 'A' && str[i] <= 'Z') {
             word += str[i++];
         }
